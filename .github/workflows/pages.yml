@@ -1,0 +1,15 @@
+name: Deploy-GitHub-Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: pages
